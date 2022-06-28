@@ -73,12 +73,27 @@ function appendComments(comments){
   comments.forEach(comment=>{
     comment_cont.innerHTML+=`<div class="comment xl:w-[819px] w-[80vw] mt-10 md:mt-16 mx-10" >
           <div class="name-items flex w-full items-center">
-            <div class="first-later font-bold h-12 w-12 text-3xl text-white bg-[#ff1f78] rounded-full flex justify-center items-center"><h2 class="font-['Poppins']">${comment.name.substr(0,1).toUpperCase()}</h2></div><span class="ml-5 font-['Poppins'] font-bold text-xl">${comment.name}</span>
+            <div id=${comment.name} class="first-letter font-bold h-12 w-12 text-3xl text-white bg-[#ff1f78] rounded-full flex justify-center items-center cursor-pointer"><h2 class="font-['Poppins']">${comment.name.substr(0,1).toUpperCase()}</h2></div><span class="ml-5 font-['Poppins'] font-bold text-xl">${comment.name}</span>
           </div>
           <div class="mt-3 rounded-sm p-4 bg-gray-200 font-['Poppins']">
             <span class="date text-gray-500">${comment.date}</span>
             <p class="mt-3">${comment.comment}</p>
           </div> 
         </div>`
-  })
+  });
+  document.querySelectorAll(".first-letter").forEach(element=>{
+    element.addEventListener("click",()=>{
+      toast(element.id);
+      console.log(element.id);
+    });
+  });
 }
+
+// window.onload=()=>{
+//   document.querySelectorAll(".first-letter").forEach(element=>{
+//     element.addEventListener("click",()=>{
+//       toast(element.id);
+//       console.log(element.id);
+//     });
+//   });
+// }
