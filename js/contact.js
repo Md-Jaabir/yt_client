@@ -43,4 +43,9 @@ contactForm.addEventListener("submit",(event)=>{
 
   let newContact=new contactInfo(name,email,phone,desc);
   newContact.saveToServer();
-})
+}) 
+
+window.onload=()=>hideLoadingScreen();
+
+
+

@@ -21,12 +21,12 @@ class contactInfo{
     })
     .then(response => response.json())
     .then(json => {
-       location.href="./success.html?msg=Your form has successfully submitted and datas are successfully sent to the author of the channel";  
-      hideLoadingScreen();
+       location.href="./success.html?msg=Your form has successfully submitted and datas are successfully sent to the author of the channel&backpath=./index.html";  
+      // hideLoadingScreen();
     })
     .catch(err=>{
-      location.href="./error.html?msg=Your form hasn't  submitted because of some network issue.Pleae check your internet connection first.";  
-      hideLoadingScreen();
+      location.href="./error.html?msg=Your form hasn't  submitted because of some network issue.Pleae check your internet connection first.&backpath=./index.html";  
+      // hideLoadingScreen();
     })
   }
 }
@@ -105,9 +105,26 @@ function hideLoadingScreen(){
 }
 
 function toast(text){
+  document.querySelector(".toast").style.display="flex";
   document.querySelector(".toast").style.opacity="1";
   document.querySelector(".toast").innerHTML=text;
   setTimeout(()=>{
     document.querySelector(".toast").style.opacity="0";
+    setTimeout(()=>{
+      document.querySelector(".toast").style.display="none";
+    },1100)
   },2000)
+}
+
+function searchToObj(){
+  let key,value;
+  let searchObj={}
+  let searchStr=location.search.trim().replace("?","").replaceAll("%20"," ");
+  searchArr=searchStr.split("&");
+  searchArr.forEach(element=>{
+    key=element.trim().split("=")[0].trim();
+    value=element.trim().split("=")[1].trim();
+    searchObj[key]=value;
+  });
+  return searchObj;
 }

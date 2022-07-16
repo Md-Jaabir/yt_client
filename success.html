@@ -9,15 +9,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>Sony Aath</title>
+<!--   <script src="https://cdn.tailwindcss.com"></script> -->
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Success!</title>
 </head>
 <body class="h-screen w-screen flex justify-center items-center flex-col font-['Poppins']">
   <span class="material-symbols-outlined text-green-300 text-8xl font-bold">check_circle</span>
   <h1 class="text-4xl font-bold mt-3">Success!!!</h1>
-  <p class="mt-3 px-5 lg:px-16">Loading...</p>
+  <div class="flex items-center mt-3 px-5 lg:px-16"><p class="">Loading...</p><a href="./" class="ml-3 underline text-blue-400"> Go back</a></div>
+  <script src="js/utils.js"></script>
   <script>
-    document.querySelector("p").innerHTML=location.search.substr(1,location.search.length-1).split("=")[1].replaceAll("%20"," ");
+    document.querySelector("p").innerHTML=searchToObj().msg;
+    document.querySelector("a").href=searchToObj().backpath;
   </script>
 </body>
 </html>

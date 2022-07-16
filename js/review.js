@@ -73,3 +73,7 @@ function fetchReviews(reviews){
           </div>`
   })
 }
+
+window. onload=()=>{
+  hideLoadingScreen();
+}

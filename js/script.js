@@ -33,3 +33,4 @@ function fillStar(Id){
 function redirect(url){
   location.href=url;
 }
+
