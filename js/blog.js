@@ -1,6 +1,6 @@
 let blog_cont=document.querySelector(".blogs");
 showLoadingScreen();
-fetch("https://youtubechannelbackend.herokuapp.com/user/blog_posts")
+fetch("https://web-production-2843.up.railway.app/user/blog_posts")
 .then(res=>res.json())
 .then(blogs=>{
   appendBlogs(blogs);
