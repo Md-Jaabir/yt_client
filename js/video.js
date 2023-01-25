@@ -1,6 +1,6 @@
 let video_cont=document.querySelector(".videos");
 showLoadingScreen();
-fetch("https://youtubechannelbackend.herokuapp.com/user/videos")
+fetch("https://web-production-2843.up.railway.app/user/videos")
 .then(res=>res.json())
 .then(videos=>{
   appendVideos(videos);
