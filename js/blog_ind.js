@@ -3,7 +3,7 @@ let comment_cont=document.querySelector(".comments .all");
 let blogId=location.search.replace("?","").split("&")[0].split("=")[1];
 let video_cont=document.querySelector(".videos");
 showLoadingScreen()
-fetch(`https://youtubechannelbackend.herokuapp.com/user/blog_posts?_id=${blogId}`)
+fetch(`https://web-production-2843.up.railway.app/user/blog_posts?_id=${blogId}`)
 .then(res=>res.json())
 .then(blogs=>{
   setEverythingInPlace(blogs[0]);
@@ -58,7 +58,7 @@ commentForm.addEventListener("submit",(event)=>{
 });
 showLoadingScreen();
 
-fetch(`https://youtubechannelbackend.herokuapp.com/user/comments?blogId=${blogId}`)
+fetch(`https://web-production-2843.up.railway.app/user/comments?blogId=${blogId}`)
 .then(res=>res.json())
 .then(comments=>{
   appendComments(comments);
