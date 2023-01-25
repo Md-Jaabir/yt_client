@@ -12,7 +12,7 @@ class contactInfo{
         phone:this.phone,
         description:this.description
       }
-      fetch("https://youtubechannelbackend.herokuapp.com/user/contact", {
+      fetch("https://web-production-2843.up.railway.app/user/contact", {
         method: "POST",
         body: JSON.stringify(this.infoObj),
         headers: {
@@ -45,7 +45,7 @@ class review{
         description:this.description,
         email:this.email
       }
-      fetch("https://youtubechannelbackend.herokuapp.com/user/publish_riview", {
+      fetch("https://web-production-2843.up.railway.app/user/publish_riview", {
         method: "POST",
         body: JSON.stringify(this.infoObj),
         headers: {
@@ -76,7 +76,7 @@ class blogComment{
         comment:this.comment,
         date:this.date
       }
-      fetch("https://youtubechannelbackend.herokuapp.com/user/publish_comment", {
+      fetch("https://web-production-2843.up.railway.app/user/publish_comment", {
         method: "POST",
         body: JSON.stringify(this.infoObj),
         headers: {
