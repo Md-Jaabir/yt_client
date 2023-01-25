@@ -42,7 +42,7 @@ reviewForm.addEventListener("submit",(event)=>{
   newReview.saveToServer();
 });
 
-fetch("https://youtubechannelbackend.herokuapp.com/user/riviews")
+fetch("https://web-production-2843.up.railway.app/user/riviews")
 .then(res=>res.json())
 .then(reviews=>{
   fetchReviews(reviews);
